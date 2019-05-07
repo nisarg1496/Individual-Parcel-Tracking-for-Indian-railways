@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	
+	
+</head>
+<body >
+
+	<section id="navigationbar" class="navbar navbar-fixed-top">
+		<center>
+			<h5 class="textcolor">Railway Parcel System</h5>
+		</center>
+	</section>
+	<SECTION ng-app="myapp" class="container datamodel" >
+		<div class="panel" ng-controller="login" class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+			<div class="panel-body" style="margin-top:150px;">
+
+				<form class="form-horizontal" name="userForm" novalidate>
+
+					<div id="thompson" style="display:none;" class="alert alert-danger">
+						
+					</div>
+					<div class="form-group">
+						<label for="username" class="control-label col-sm-2">Package id</label>
+						<div class="col-sm-5">
+							<input type="text" id="username" name="username" class="form-control" placeholder="package id" ng-model="user.username" required>
+							<span ng-show="userForm.username.$invalid && userForm.username.$touched" class="danger">
+								package field is required
+							</span>
+
+
+						</div>
+						
+					</div>
+			
+					<button class="btn btn-primary btn-block btn-sm-5" ng-disabled="userForm.$invalid" ng-click="login()">Track</button>
+				</form>
+			</div>
+		</div>
+	</SECTION>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+		
+		#navigationbar{
+			background-color: #FC5957;  /*Tomato color for background*/
+			height:50px;
+			z-index:5;
+		}
+
+		.datamodel{
+			margin-left: auto;
+			margin-right: auto;
+			
+		}
+
+		.textcolor{
+			color: #FBFAF9;
+
+		}
+	</style>
+	<script type="text/javascript">
+		
+		var app= angular.module("myapp",[]);
+		app.controller("login",function($scope,$http){
+
+			$scope.login = function()
+			{
+				var object=$scope.user;
+				$http.post("model/validate.php",{'package':object.username}).success(function(data){
+
+					if(data=="\"11\"")
+					{
+						
+						alert("Your package is the Source hub and will be soon loaded");
+						
+					}
+					else if(data=="\"12\"")
+					{
+						window.location.href="d.php?package="+object.username;
+						
+					}
+					else
+					{
+						var msg ="<p>Package does not exist </p>";
+         				 $("#thompson").html(msg).css('display','flex');
+         				 $scope.userForm.username.$touched=false;
+         				 $scope.user.username=null;
+					}
+				});
+			}
+		});
+	</script>
+</body>
+</html>

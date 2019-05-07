@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Track parcel</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="js/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+	<!-- start of toolbar -->
+	<section id="navigationbar" class="navbar navbar-fixed-top">
+		<!-- start of navigation -->
+		<center>
+			
+
+			<!-- start of title -->
+			<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+				<center>
+					<h6 class="textcolor" style="font-size:20px;"><b>Track Parcel</b></h6>
+				</center>
+			</div>
+			<!-- end of title -->
+		</center>
+		<!-- end of navigation -->
+
+
+		<!-- start of the arrival date and station -->
+		<div class="row">
+
+			<div class="col-sm-6 col-lg-6 col-md-6 col-xs-6">
+				<div>
+					<center>
+						<span class="textcolor">Arrival Time</span>
+						<span><h4 class="textcolor toolbardata">9:35 am</h4></span>
+
+					</center>
+				</div>
+			</div>
+
+			<div class="col-sm-6 col-lg-6 col-md-6 col-xs-6">
+				<div>
+					<center>
+						<span class="textcolor">Latest Station</span>
+						<span><h4 class="textcolor toolbardata">Ratlam Junction</h4></span>
+					</center>
+				</div>
+			</div>
+
+		</div>
+		<!-- end of the arrival date and station -->
+	</section>
+	<!-- end of toolbar -->
+
+	<!-- start of time line data-->
+	<section class="panel list" ng-controller="dataController">
+		<ul class="list-group">
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-3 col-lg-3 col-xs-3 col-md-3" style="padding-top: 10px;">
+						1 Apr 2017 <br> 5:18 pm
+					</div>
+					<div class="col-sm-6 col-lg-6 col-xs-6 col-md-6">
+							<h6><center>Package loaded from Bandra Terminals</center></h6>
+					</div>
+				</div>
+			</li>
+
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-3 col-lg-3 col-xs-3 col-md-3" style="padding-top: 10px;">
+						12:00 am
+					</div>
+					<div class="col-sm-6 col-lg-6 col-xs-6 col-md-6">
+							<h6>Package reached Borivali</h6>
+					</div>
+				</div>
+			</li>
+
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-3 col-lg-3 col-xs-3 col-md-3" style="padding-top: 10px;">
+						3:27 am
+					</div>
+					<div class="col-sm-6 col-lg-6 col-xs-6 col-md-6">
+							<h6>Package reached Surat</h6>
+					</div>
+				</div>
+			</li>
+
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-3 col-lg-3 col-xs-3 col-md-3" style="padding-top: 10px;">
+						4:12 am
+					</div>
+					<div class="col-sm-6 col-lg-6 col-xs-6 col-md-6">
+							<h6>Package reached Bharuch Junction</h6>
+					</div>
+				</div>
+			</li>
+
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-3 col-lg-3 col-xs-3 col-md-3" style="padding-top: 10px;">
+						5:14 am
+					</div>
+					<div class="col-sm-6 col-lg-6 col-xs-6 col-md-6">
+							<h6>Package reached Vadodara Junction</h6>
+					</div>
+				</div>
+			</li>
+
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-3 col-lg-3 col-xs-3 col-md-3" style="padding-top: 10px;">
+						7:25 am
+					</div>
+					<div class="col-sm-6 col-lg-6 col-xs-6 col-md-6">
+							<h6>Package reached Dahod</h6>
+					</div>
+				</div>
+			</li>
+
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-sm-3 col-lg-3 col-xs-3 col-md-3" style="padding-top: 10px;">
+						9:35 am
+					</div>
+					<div class="col-sm-6 col-lg-6 col-xs-6 col-md-6">
+							<h6>Package reached Ratlam Junction</h6>
+					</div>
+				</div>
+			</li>
+
+	</section>
+	<!-- end of timeline data -->
+
+	<!-- start of of footer -->
+	<footer>
+		<!-- start of the view map -->
+		<!-- start of the view map button -->
+		<div>
+	  		<button type="button" class="btn btn-lg btn-color btn-block btn-xs-12 btn-md-12 btn-sm-12 btn-lg-12 textcolor" data-toggle="modal" data-target="#viewMap">View map</button>
+		</div>
+		<!-- end of the view map button -->
+
+
+	  <!-- start of map Modal -->
+	  <div class="modal fade" id="viewMap" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        
+	        <div class="modal-body">
+	          <p></p>
+	        </div>
+	      </div>
+	      
+	    </div>
+	    <!-- end of map model -->
+	    <!-- end of the view map -->
+	</footer>
+	<!-- end of footer -->
+
+
+	
+
+	
+  </div>
+	<!-- loading script -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<style type="text/css">
+		
+		.arrowlayout{
+			padding-left: 29px;  /*This is used to set the position of the arrow*/
+			padding-top: 16px;
+		}
+
+		#navigationbar{
+			background-color: #FC5957;  /*Tomato color for background*/
+			height:120px;
+		}
+
+
+		.textcolor{
+
+			color: #FBFAF9;
+
+		}
+
+		.list{
+
+			margin-top: 120px;
+			margin-bottom: 0px;
+		}
+
+		.row{
+			margin-left:0px;
+			margin-right:0px;
+		}
+
+		.btn-color{
+			/*color:;*/
+			background-color:#23CAB8;
+			border-color:transparent;
+		}
+
+		.databody{
+			margin-bottom:23px;
+			background-color:#ffffff;
+			border:1px solid transparent;
+			border-radius:3px;
+			-webkit-box-shadow:0 1px 1px rgba(0,0,0,0.05);
+			box-shadow:0 1px 1px rgba(0,0,0,0.05);
+		}
+
+		.toolbardata{
+			margin-top:0px;
+		}
+
+	</style>
+</body>
+</html>
